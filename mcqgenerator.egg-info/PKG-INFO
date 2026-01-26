@@ -1,0 +1,12 @@
+Metadata-Version: 2.4
+Name: mcqgenerator
+Version: 0.1
+Requires-Dist: huggingface-hub
+Requires-Dist: langchain
+Requires-Dist: streamlit
+Requires-Dist: python-dotenv
+Requires-Dist: pypdf2
+Requires-Dist: langchain-community
+Requires-Dist: langchain-huggingface
+Requires-Dist: pandas
+Dynamic: requires-dist
