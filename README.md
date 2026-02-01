@@ -1,9 +1,9 @@
-🧠 MCQ Generator
+##🧠 MCQ Generator
 
 An AI-powered MCQ Generator that automatically creates multiple-choice questions from input text using Large Language Models (LLMs).
 Built with Python and Streamlit, the app generates structured, validated JSON output suitable for quizzes, exams, and e-learning platforms.
 
-🚀 Features
+##🚀 Features
 
 📄 Generate MCQs from any input text
 
@@ -17,7 +17,7 @@ Built with Python and Streamlit, the app generates structured, validated JSON ou
 
 🌐 Interactive Streamlit UI
 
-🛠️ Tech Stack
+##🛠️ Tech Stack
 
 Python 3.9+
 
@@ -29,7 +29,7 @@ LLMs (OpenAI / Groq / HuggingFace – configurable)
 
 JSON
 
-📂 Project Structure
+##📂 Project Structure
 mcq-generator/
 │
 ├── src/
@@ -43,7 +43,7 @@ mcq-generator/
 ├── README.md
 └── .env
 
-⚙️ Installation
+##⚙️ Installation
 1️⃣ Clone the repository
 git clone https://github.com/your-username/mcq-generator.git
 cd mcq-generator
@@ -60,10 +60,10 @@ pip install -r requirements.txt
 
 Create a .env file in the root directory:
 
-OPENAI_API_KEY=your_api_key_here
+GROQ_API_KEY=your_api_key_here
 
 
-(Or Groq / HuggingFace keys if used)
+(Or OpenAi / HuggingFace keys if used)
 
 ▶️ Run the Application
 streamlit run StreamlitApp.py
@@ -84,7 +84,7 @@ http://localhost:8501
   ]
 }
 
-⚠️ Common Issues
+##⚠️ Common Issues
 
 Invalid JSON output
 Ensure the LLM prompt enforces strict JSON format
@@ -94,9 +94,7 @@ Remove extra text or markdown before parsing:
 
 data = data.strip().replace("```json", "").replace("```", "")
 
-🌟 Future Improvements
-
-Export MCQs to PDF / CSV
+##🌟 Future Improvements
 
 User authentication
 
@@ -106,12 +104,7 @@ Database integration
 
 Multi-language support
 
-🤝 Contributing
-
-Contributions are welcome!
-Feel free to fork this repository and submit a pull request.
-
-📄 License
+##📄 License
 
 This project is licensed under the MIT License.
 
@@ -119,3 +112,4 @@ This project is licensed under the MIT License.
 
 Vinaykumar Yadav
 Engineering Student | AI & Python Enthusiast
+
