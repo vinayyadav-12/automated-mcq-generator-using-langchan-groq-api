@@ -1,115 +1,71 @@
-##🧠 MCQ Generator
+# MCQs Creator Application with LangChain 🧠🤖
 
-An AI-powered MCQ Generator that automatically creates multiple-choice questions from input text using Large Language Models (LLMs).
-Built with Python and Streamlit, the app generates structured, validated JSON output suitable for quizzes, exams, and e-learning platforms.
+A **production-ready LLM-powered application** that automatically generates **high-quality Multiple Choice Questions (MCQs)** from input text, PDFs, or notes, with **difficulty control, correct answers, and explanations**.
 
-##🚀 Features
+This project is ideal for **EdTech platforms, teachers, exam preparation tools, and AI portfolios**, showcasing prompt engineering, structured outputs, and robust JSON handling.
 
-📄 Generate MCQs from any input text
+---
 
-🤖 LLM-powered question generation
+## 🚀 Features
 
-🎯 Adjustable difficulty levels
+* 📄 Input from text or PDF
+* 🧠 AI-generated MCQs
+* 🎯 Difficulty levels: Easy / Medium / Hard
+* ✅ Correct answer identification
+* 💡 Answer explanations
+* 🔢 Configurable number of questions
+* 📦 Clean JSON output (machine-readable)
+* 🖥️ Simple and intuitive UI
 
-📊 Structured JSON output
+---
 
-🧪 Built-in JSON validation & error handling
+## 🏗️ Architecture Overview
 
-🌐 Interactive Streamlit UI
+```
+Frontend (Streamlit UI)
+        ↓
+Text / PDF Input
+        ↓
+Prompt Engineering + LLM
+        ↓
+Structured JSON Output (Pydantic)
+        ↓
+MCQ Display & Evaluation
+```
 
-##🛠️ Tech Stack
+The application is built with **clear frontend–backend separation**, following industry best practices.
 
-Python 3.9+
+---
 
-Streamlit
+## 🛠️ Tech Stack
 
-LangChain
+| Layer             | Technology                  |
+| ----------------- | --------------------------- |
+| Frontend          | Streamlit                   |
+| Backend           | Python                      |
+| LLM Framework     | LangChain (v1.x)            |
+| LLM Provider      | OpenAI / Groq / HuggingFace |
+| Output Validation | Pydantic                    |
+| File Parsing      | pdfplumber                  |
 
-LLMs (OpenAI / Groq / HuggingFace – configurable)
+---
 
-JSON
+## 📁 Project Structure
 
-##📂 Project Structure
+The project follows a **simple and clean structure**, keeping all core logic inside a single backend package and a single frontend entry point.
+
+```
 mcq-generator/
 │
 ├── src/
-│   └── mcqgenerator/
-│       ├── utils.py
-│       ├── prompt.py
-│       └── generator.py
+│   └── mcqgenerator/            # Backend package (core logic)
+│       ├── __init__.py          # Package initializer
+│       ├── utils.py             # Helper utilities (JSON handling, validation)
+│       ├── prompt.py            # Prompt templates for MCQ generation
+│       └── generator.py         # Core MCQ generation logic (LLM calls)
 │
-├── StreamlitApp.py
-├── requirements.txt
-├── README.md
-└── .env
-
-##⚙️ Installation
-1️⃣ Clone the repository
-git clone https://github.com/your-username/mcq-generator.git
-cd mcq-generator
-
-2️⃣ Create virtual environment (recommended)
-python -m venv .venv
-source .venv/bin/activate      # macOS/Linux
-.venv\Scripts\activate         # Windows
-
-3️⃣ Install dependencies
-pip install -r requirements.txt
-
-🔐 Environment Variables
-
-Create a .env file in the root directory:
-
-GROQ_API_KEY=your_api_key_here
-
-
-(Or OpenAi / HuggingFace keys if used)
-
-▶️ Run the Application
-streamlit run StreamlitApp.py
-
-
-The app will open in your browser at:
-
-http://localhost:8501
-
-🧪 Sample Output (JSON)
-{
-  "quiz": [
-    {
-      "question": "What is Machine Learning?",
-      "options": ["AI technique", "Programming language", "Database", "OS"],
-      "correct": "AI technique"
-    }
-  ]
-}
-
-##⚠️ Common Issues
-
-Invalid JSON output
-Ensure the LLM prompt enforces strict JSON format
-
-JSONDecodeError
-Remove extra text or markdown before parsing:
-
-data = data.strip().replace("```json", "").replace("```", "")
-
-##🌟 Future Improvements
-
-User authentication
-
-Question tagging & topic-wise generation
-
-Database integration
-
-Multi-language support
-
-##📄 License
-
-This project is licensed under the MIT License.
-
-👨‍💻 Author
-
-Vinaykumar Yadav
-Engineering Student | AI & Python Enthusiast
-
+├── StreamlitApp.py              # Frontend: Streamlit UI (entry point)
+├── requirements.txt             # Python dependencies
+├── .env                         # Environment variables (API keys)
+├── README.md                    # Project documentation
+```
